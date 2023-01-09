@@ -27,7 +27,7 @@ public class Jump : MonoBehaviour
             Jumping();
         }*/
 
-        
+        ResetJumpCount();
     }
 
     public void Jumping()
