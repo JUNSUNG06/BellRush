@@ -9,4 +9,9 @@ public class StageSelect : MonoBehaviour
     {
         SceneManager.LoadScene("Play");
     }
+
+    public void SetStageIndex(int index)
+    {
+        PlayerPrefs.SetInt("Stage Index", index);
+    }
 }
