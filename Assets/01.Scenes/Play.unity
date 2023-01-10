@@ -2163,8 +2163,10 @@ GameObject:
   - component: {fileID: 1366574555}
   - component: {fileID: 1366574554}
   - component: {fileID: 1366574556}
+  - component: {fileID: 1366574558}
   - component: {fileID: 1366574548}
   - component: {fileID: 1366574552}
+  - component: {fileID: 1366574557}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2247,7 +2249,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -1134479214, guid: c1814c1b61427dd4ab9639c3607574bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2267,7 +2269,7 @@ Transform:
   m_GameObject: {fileID: 1366574547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.37, y: 2.99, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2286,7 +2288,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.017689466, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2297,7 +2299,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6613722, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &1366574553
 MonoBehaviour:
@@ -2313,7 +2315,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpHeight: 1.5
   jumpNumber: 2
-  groundCheckOffset: 0.03
+  isJump: 0
+  groundCheckOffset: 0.54
   groundCheckRadius: 0.5
   groundLayer:
     serializedVersion: 2
@@ -2343,7 +2346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7756064f718bc149af9cb238ff680f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slideColSize: {x: 0, y: 0}
+  slideColSize: {x: 1, y: 1}
 --- !u!114 &1366574556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2354,6 +2357,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9761f41368d843741a9bddcb33ec78f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1366574557
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366574547}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c75df9b36f5f9e47b9f5b65abad65d2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1366574558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366574547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192aaff21cf3dc84ab7e4511fb242606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1419820352
@@ -2714,6 +2749,7 @@ GameObject:
   - component: {fileID: 1687593712}
   - component: {fileID: 1687593711}
   - component: {fileID: 1687593710}
+  - component: {fileID: 1687593713}
   m_Layer: 5
   m_Name: SlideBtn
   m_TagString: Untagged
@@ -2784,19 +2820,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1687593711}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1366574554}
-        m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
-        m_MethodName: SlideAction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1687593711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2835,6 +2859,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687593708}
   m_CullTransparentMesh: 1
+--- !u!114 &1687593713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687593708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a32d42afbb27784aa7caac1a1a65610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1366574558}
+        m_TargetAssemblyTypeName: PlayerAnim, Assembly-CSharp
+        m_MethodName: SetRunAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  downEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1366574554}
+        m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
+        m_MethodName: SlideAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1755526123
 GameObject:
   m_ObjectHideFlags: 0
