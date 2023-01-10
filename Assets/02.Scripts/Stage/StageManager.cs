@@ -30,6 +30,5 @@ public class StageManager : MonoBehaviour
     {
         GameObject.Find("Player").GetComponent<Transform>().position = stage.transform.Find("Positions/InitPos/PlayerInitPos").position;
         stage.transform.Find("Boss").GetComponent<Transform>().position = stage.transform.Find("Positions/InitPos/BossInitPos").position;
-        Debug.Log("set pos");
     }
 }
