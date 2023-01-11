@@ -9,6 +9,7 @@ public class PlayerAnim : MonoBehaviour
     private int runHash = Animator.StringToHash("isRun");
     private int slideHash = Animator.StringToHash("isSlide");
     private int jumpHash = Animator.StringToHash("isJump");
+    private int doubleJumpHash = Animator.StringToHash("DoubleJump");
 
     private void Start()
     {
@@ -16,6 +17,7 @@ public class PlayerAnim : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
 
         playerInput.jumpAction += JumpAnim;
+        playerInput.jumpAction += DoubleJumpAnim;
         playerInput.slideAction += SlideAnim;
     }
 
@@ -33,7 +35,18 @@ public class PlayerAnim : MonoBehaviour
 
     public void JumpAnim()
     {
-        animator.SetBool(runHash, false);
-        animator.SetTrigger(jumpHash);
+        if(!animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
+        {
+            animator.SetBool(runHash, false);
+            animator.SetTrigger(jumpHash);
+        }      
+    }
+
+    public void DoubleJumpAnim()
+    {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
+        {
+            animator.SetTrigger(doubleJumpHash);
+        }
     }
 }
