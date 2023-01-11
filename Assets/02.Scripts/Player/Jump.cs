@@ -6,6 +6,7 @@ public class Jump : MonoBehaviour
 {
     public float jumpHeight;
     public int jumpNumber;
+    public bool isJump;
     public float groundCheckOffset;
     public float groundCheckRadius;
     public LayerMask groundLayer;
@@ -13,20 +14,17 @@ public class Jump : MonoBehaviour
     public int jumpCount = 0;
 
     private Rigidbody2D rb;
+    private PlayerAnim anim;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         GetComponent<PlayerInput>().jumpAction += Jumping;
+        anim = GetComponent<PlayerAnim>();
     }
 
     private void Update()
     {
-        /*if(Input.GetMouseButtonDown(0))
-        {
-            Jumping();
-        }*/
-
         ResetJumpCount();
     }
 
@@ -35,6 +33,7 @@ public class Jump : MonoBehaviour
         if(jumpCount < jumpNumber)
         {
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Sqrt((float)(2 * 9.81 * jumpHeight)));
+            isJump = true;
             jumpCount++;
         }       
     }
@@ -54,6 +53,8 @@ public class Jump : MonoBehaviour
             if(jumpCount > 0 && rb.velocity.y < 0f)
             {
                 jumpCount = 0;
+                isJump = false;
+                anim.SetRunAnim();
             }
         }     
     }
