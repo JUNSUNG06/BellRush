@@ -6,7 +6,9 @@ public class StageManager : MonoBehaviour
 {
     public static StageManager Instance;
 
-    public GameObject stage;
+    [HideInInspector] public GameObject stage;
+    public GameObject clearPanel;
+    public GameObject gameOverPanel;
 
     private void Awake()
     {
@@ -30,5 +32,17 @@ public class StageManager : MonoBehaviour
     {
         GameObject.Find("Player").GetComponent<Transform>().position = stage.transform.Find("Positions/InitPos/PlayerInitPos").position;
         stage.transform.Find("Boss").GetComponent<Transform>().position = stage.transform.Find("Positions/InitPos/BossInitPos").position;
+    }
+
+    public void Clear()
+    {
+        clearPanel.SetActive(true);
+        stage.GetComponent<Stage>().ClearStage();
+    }
+
+    public void GameOver()
+    {
+        gameOverPanel.SetActive(true);
+        Debug.Log("game over");
     }
 }
