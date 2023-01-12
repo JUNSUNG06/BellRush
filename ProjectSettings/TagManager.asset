@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Boss
   - FinishObject
+  - Obstacles
   layers:
   - Default
   - TransparentFX
@@ -16,9 +17,9 @@ TagManager:
   - 
   - 
   - Ground
-  - 
-  - 
-  - 
+  - Obstacles
+  - Boss
+  - BossGround
   - 
   - 
   - 
