@@ -20,7 +20,7 @@ public class ProgressGage : MonoBehaviour
         startPos = StageManager.Instance.stage.transform.Find("Positions/InitPos/PlayerInitPos");
         playerPos = GameObject.Find("Player").GetComponent<Transform>();
 
-        stageLength = finishPos.position.x - startPos.position.x;
+        stageLength = finishPos.position.x - startPos.position.x;   
     }
 
     private void Update()
