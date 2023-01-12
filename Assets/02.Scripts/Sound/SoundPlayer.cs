@@ -7,7 +7,7 @@ public class SoundPlayer : MonoBehaviour
     AudioSource maudio;
     public AudioClip clickSound;
 
-    private void Start()
+    private void Awake()
     {
         maudio = GetComponent<AudioSource>();
     }

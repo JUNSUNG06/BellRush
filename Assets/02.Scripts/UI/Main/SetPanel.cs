@@ -15,6 +15,7 @@ public class SetPanel : MonoBehaviour
     private void Start()
     {
         ActivePanel = mainPanel;
+        FadeManager.Instance.FadeIn();
     }
 
     public void SetPanelActive(GameObject panel)
