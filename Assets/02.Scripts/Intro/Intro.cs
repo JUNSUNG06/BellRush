@@ -7,6 +7,7 @@ public class Intro : MonoBehaviour
 {
     public AudioClip clickSound;
     public SoundPlayer s;
+    private bool isClicked = false;
 
     private void Update()
     {
@@ -15,8 +16,9 @@ public class Intro : MonoBehaviour
 
     private void LoadMainScene()
     {
-        if(Input.anyKeyDown)
+        if(Input.anyKeyDown && !isClicked)
         {
+            isClicked = true;
             s.PlayClickSound();
             FadeManager.Instance.FadeOut(() => SceneManager.LoadScene("Main"));
         }

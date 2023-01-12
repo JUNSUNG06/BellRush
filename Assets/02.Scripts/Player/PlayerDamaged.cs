@@ -21,6 +21,10 @@ public class PlayerDamaged : MonoBehaviour
         {
             Hit();
         }
+        else if(collision.gameObject.CompareTag("DeathArea"))
+        {
+            StageManager.Instance.GameOver();
+        }
     }
 
     private void Hit()

@@ -2,13 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StageSelect : MonoBehaviour
 {
     public AudioClip bellSound;
+    public Button button;
+    private bool isClicked = false;
+
 
     public void PlayBtn()
     {
+        BGMVolumeManager.Instance.SmallerBGM();
+        button.interactable = false;
         FadeManager.Instance.FadeOut(() => StartCoroutine(PlayBellSoundAndLoadScene()));       
     }
 
@@ -24,5 +30,15 @@ public class StageSelect : MonoBehaviour
         yield return new WaitForSeconds(3.5f);
 
         SceneManager.LoadScene("Play");
+    }
+
+    public void IsClicked()
+    {
+        if(!isClicked)
+        {
+            isClicked = true;
+        }
+        else
+            return;
     }
 }
