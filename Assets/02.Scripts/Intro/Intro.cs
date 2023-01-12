@@ -17,16 +17,8 @@ public class Intro : MonoBehaviour
     {
         if(Input.anyKeyDown)
         {
-            StartCoroutine(SceneLoad());
+            s.PlayClickSound();
+            FadeManager.Instance.FadeOut(() => SceneManager.LoadScene("Main"));
         }
-    }
-
-    IEnumerator SceneLoad()
-    {
-        s.PlayClickSound();
-
-        yield return new WaitForSeconds(3);
-
-        SceneManager.LoadScene("Main");
     }
 }

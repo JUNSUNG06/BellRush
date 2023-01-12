@@ -20,6 +20,11 @@ public class StageManager : MonoBehaviour
         CreateStage();
     }
 
+    private void Start()
+    {
+        FadeManager.Instance.fadeImage.gameObject.SetActive(false);
+    }
+
     private void CreateStage()
     {
         stage = Resources.Load<GameObject>($"Prefabs/Stages/Stage{PlayerPrefs.GetInt("Stage Index")}");
