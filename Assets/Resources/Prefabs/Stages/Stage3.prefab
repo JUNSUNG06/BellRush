@@ -208,6 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageIndex: 3
+  backgroundImage: {fileID: 21300000, guid: 0c784120c90066a468bc5d8f477a5125, type: 3}
 --- !u!1 &8694852385916113191
 GameObject:
   m_ObjectHideFlags: 0

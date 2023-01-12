@@ -5,6 +5,7 @@ using UnityEngine;
 public class Stage : MonoBehaviour
 {
     public int stageIndex;
+    public Sprite backgroundImage;
 
     public void ClearStage()
     {
