@@ -9,6 +9,8 @@ public class StageManager : MonoBehaviour
     [HideInInspector] public GameObject stage;
     public GameObject clearPanel;
     public GameObject gameOverPanel;
+    public AudioClip clearSound;
+    public AudioClip gameOverSound;
 
     private void Awake()
     {
@@ -22,7 +24,7 @@ public class StageManager : MonoBehaviour
 
     private void Start()
     {
-        FadeManager.Instance.fadeImage.gameObject.SetActive(false);
+        FadeManager.Instance.FadeIn();
     }
 
     private void CreateStage()
@@ -43,11 +45,18 @@ public class StageManager : MonoBehaviour
     {
         clearPanel.SetActive(true);
         stage.GetComponent<Stage>().ClearStage();
+        GameObject.Find("Main Camera").GetComponent<AudioSource>().clip = clearSound;
+        GameObject.Find("Main Camera").GetComponent<AudioSource>().loop = false;
+        GameObject.Find("Main Camera").GetComponent<AudioSource>().Play();
+        GameObject.Find("Player").GetComponent<Run>().moveSpeed = 0;
     }
 
     public void GameOver()
     {
         gameOverPanel.SetActive(true);
+        GameObject.Find("Main Camera").GetComponent<AudioSource>().clip = gameOverSound;
+        GameObject.Find("Main Camera").GetComponent<AudioSource>().loop = false;
+        GameObject.Find("Main Camera").GetComponent<AudioSource>().Play();
         Debug.Log("game over");
     }
 }

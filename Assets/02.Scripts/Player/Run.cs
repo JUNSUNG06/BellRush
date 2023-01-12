@@ -7,7 +7,7 @@ public class Run : MonoBehaviour
 {
     public float originMoveSpeed;
 
-    private float moveSpeed;
+    public float moveSpeed;
 
     private Rigidbody2D rb;
 

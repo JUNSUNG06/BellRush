@@ -20,11 +20,6 @@ public class FadeManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    private void Start()
-    {
-        
-    }
-
     public void FadeIn()
     {
         fadeImage.DOColor(new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 0f), 3f).OnComplete(() => fadeImage.gameObject.SetActive(false));
@@ -32,7 +27,7 @@ public class FadeManager : MonoBehaviour
 
     public void FadeIn(Action action)
     {
-        fadeImage.DOColor(new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 0f), 3f).OnComplete(() => action?.Invoke());
+        fadeImage.DOColor(new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 0f), 3f).OnComplete(() => action?.Invoke()).OnComplete(() => fadeImage.gameObject.SetActive(false));
     }
     
     public void FadeOut()
