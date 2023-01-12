@@ -74,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2351928073878140418}
   - component: {fileID: 3147569623942256988}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BossRoad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,11 +248,11 @@ GameObject:
   - component: {fileID: 2329305998553378982}
   - component: {fileID: 2329305998553378981}
   - component: {fileID: 2329305998553378980}
-  - component: {fileID: 2329305998553378983}
   - component: {fileID: 2329305998553378976}
   - component: {fileID: 2712372237491392046}
   - component: {fileID: 5506142236170924045}
-  m_Layer: 0
+  - component: {fileID: 7165544032074752021}
+  m_Layer: 10
   m_Name: Boss
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -339,32 +339,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originMoveSpeed: 3.5
---- !u!61 &2329305998553378983
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2329305998553379003}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.012027264, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.81558037, y: 1}
-  m_EdgeRadius: 0
 --- !u!50 &2329305998553378976
 Rigidbody2D:
   serializedVersion: 4
@@ -418,6 +392,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378fda55eab1c17448ad2932905d0010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &7165544032074752021
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2329305998553379003}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.54, y: 1}
+  m_Direction: 0
 --- !u!1 &5491080042110334025
 GameObject:
   m_ObjectHideFlags: 0
