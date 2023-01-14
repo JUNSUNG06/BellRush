@@ -29,7 +29,7 @@ public class StageManager : MonoBehaviour
 
     private void CreateStage()
     {
-        stage = Resources.Load<GameObject>($"Prefabs/Stages/Stage{PlayerPrefs.GetInt("Stage Index")}");
+        stage = Resources.Load<GameObject>($"Prefabs/Stages/Stage{PlayerPrefs.GetInt("Stage Index", 1)}");
         Instantiate(stage, Vector2.zero, Quaternion.identity);
 
         SetPos();
