@@ -10,4 +10,4 @@
 * 개발 툴, 언어 : Unity, C#
 * 역할 : 스테이지 시스템 구현, 플레이어 구현, UI 구현 등
 
-[게임 영상]([https://www.youtube.com/watch?v=-nHxvbjlUpM](https://www.youtube.com/watch?v=eOCbNGTfQbg)https://www.youtube.com/watch?v=eOCbNGTfQbg)
+[게임 영상](https://www.youtube.com/watch?v=eOCbNGTfQbg)
